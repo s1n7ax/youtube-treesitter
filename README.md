@@ -4,11 +4,12 @@
 
 - [What is Tree Sitter](#what-is-tree-sitter)
 - [A bit more about Tree Sitter](#a-bit-more-about-tree-sitter)
-- [nvim-treesitter](#nvim-treesitter)
+- [Nvim Tree Sitter](#nvim-tree-sitter)
+  - [Features of Nvim Tree Sitter](#features-of-nvim-tree-sitter)
 - [Requirements](#requirements)
 - [Installing](#installing)
 - [Configuration](#configuration)
-- [Tree Sitter supported Colorscheme](#tree-sitter-supported-colorscheme)
+- [Tree Sitter Supported Colorscheme](#tree-sitter-supported-colorscheme)
 
 ## What is Tree Sitter
 
@@ -27,15 +28,20 @@ can be embedded in any application
 You can play with tree sitter [https://tree-sitter.github.io/tree-sitter/playground](https://tree-sitter.github.io/tree-sitter/playground)
 
 - Syntax tree
-- Branches
+- Back tracking (branches)
 - Incremental parsing
 - Error recovery
 
-## nvim-treesitter
+## Nvim Tree Sitter
 
-Simple and easy way to use the interface for tree-sitter in Neovim and to provide
+Simple and easy way to use the interface for `tree-sitter` in Neovim and to provide
 some basic functionality such as,
 
+### Features of Nvim Tree Sitter
+
+- Shipped with parsers with for popular programming languages
+- Provides commands to manage tree sitter parsers (install/update/remove/enable/disable
+  etc..)
 - Syntax highlighting
 - Incremental selection
 - Indentation
@@ -64,6 +70,12 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 ## Configuration
 
+By default, all the modules in `nvim-treesitter` is disabled. User needs to
+enable modules explicitly.
+
+Note: Available capture groups and highlight group identifiers will be found in
+[highlight.lua](https://github.com/nvim-treesitter/nvim-treesitter/blob/master/lua/nvim-treesitter/highlight.lua) file in the source code.
+
 ```lua
 require('nvim-treesitter.configs').setup({
     ensure_installed = "all",
@@ -71,6 +83,7 @@ require('nvim-treesitter.configs').setup({
     highlight = {
         enable = true,
         custom_captures = {
+            -- ["<capture group>"] = "<highlight group>",
             -- ["keyword"] = "TSString",
         },
     },
@@ -96,9 +109,9 @@ vim.api.nvim_exec([[
 ]], true)
 ```
 
-## Tree Sitter supported Colorscheme
+## Tree Sitter Supported Colorscheme
 
-You might need nvim-treesitter supported colorscheme. List of few colorscheme
+You might need nvim-treesitter supported colorscheme. List of colorscheme
 available below.
 
 - [https://github.com/rockerBOO/awesome-neovim#treesitter-support](https://github.com/rockerBOO/awesome-neovim#treesitter-support)
