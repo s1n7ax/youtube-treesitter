@@ -2,16 +2,13 @@
 
 ## Table of content
 
-- [What is Tree Sitter](##what-is-tree-sitter)
-- [A bit more about Tree Sitter](##a-bit-more-about-tree-sitter)
-- [nvim-treesitter](##nvim-treesitter)
-- [Requirements](##requirements)
-- [Installing](##installing)
-- [Syntax Highlighting](##syntax-highlighting)
-- [Incremental Selection](##incremental-selection)
-- [Indentation](##indentation)
-- [Folding](##folding)
-- [Final Configuration](##final-configuration)
+- [What is Tree Sitter](#what-is-tree-sitter)
+- [A bit more about Tree Sitter](#a-bit-more-about-tree-sitter)
+- [nvim-treesitter](#nvim-treesitter)
+- [Requirements](#requirements)
+- [Installing](#installing)
+- [Configuration](#configuration)
+- [Tree Sitter supported Colorscheme](#tree-sitter-supported-colorscheme)
 
 ## What is Tree Sitter
 
