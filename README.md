@@ -1,6 +1,7 @@
 # Tree Sitter
 
 ## Table of content
+
 - [What is Tree Sitter](##what-is-tree-sitter)
 - [A bit more about Tree Sitter](##a-bit-more-about-tree-sitter)
 - [nvim-treesitter](##nvim-treesitter)
@@ -27,6 +28,7 @@ can be embedded in any application
 ## A bit more about Tree Sitter
 
 You can play with tree sitter [https://tree-sitter.github.io/tree-sitter/playground](https://tree-sitter.github.io/tree-sitter/playground)
+
 - Syntax tree
 - Branches
 - Incremental parsing
@@ -63,63 +65,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " :TSInstall python
 ```
 
-## Syntax Highlighting
+## Configuration
 
 ```lua
-require('nvim-treesitter.configs').setup({
-    highlight = {
-        enable = true,
-        disable = { "c", "rust" },
-        custom_captures = {
-            -- Highlight the <capture group> with the <identifier> highlight group.
-            ["<capture group>"] = "<identifier>",
-        },
-    },
-})
-```
-
-Highlight groups and identifiers are in the source code:
-https://github.com/nvim-treesitter/nvim-treesitter/blob/master/lua/nvim-treesitter/highlight.lua
-
-## Incremental Selection
-
-```lua
-require('nvim-treesitter.configs').setup({
-    incremental_selection = {
-        enable = true,
-        keymaps = {
-            init_selection = "gnn",
-            node_incremental = "grn",
-            scope_incremental = "grc",
-            node_decremental = "grm",
-        },
-    },
-})
-```
-
-## Indentation
-
-```lua
-require('nvim-treesitter.configs').setup({
-    indent = {
-        enable = true
-    }
-})
-```
-
-## Folding
-
-```lua
-vim.wo.foldmethod = 'expr'
-vim.wo.foldexpr = 'nvim_treesitter##foldexpr()'
-```
-
-## Final Configuration
-
-```lua
-vim.wo.foldmethod = 'expr'
-vim.wo.foldexpr = 'nvim_treesitter##foldexpr()'
-
 require('nvim-treesitter.configs').setup({
     ensure_installed = "all",
 
@@ -144,4 +92,17 @@ require('nvim-treesitter.configs').setup({
         enable = true
     },
 })
+
+vim.api.nvim_exec([[
+    set foldmethod=expr
+    set foldexpr=nvim_treesitter#foldexpr()
+]], true)
 ```
+
+## Tree Sitter supported Colorscheme
+
+You might need nvim-treesitter supported colorscheme. List of few colorscheme
+available below.
+
+- [https://github.com/rockerBOO/awesome-neovim#treesitter-support](https://github.com/rockerBOO/awesome-neovim#treesitter-support)
+- [https://github.com/nvim-treesitter/nvim-treesitter/wiki/Colorschemes](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Colorschemes)
